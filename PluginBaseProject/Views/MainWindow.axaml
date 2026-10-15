@@ -1,0 +1,34 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PluginBaseProject.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PluginBaseProject.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="PluginBaseProject"
+        DragDrop.AllowDrop="True"
+        DragDrop.Drop="Window_Drop"
+        DragDrop.DragOver="Window_DragOver"
+        Loaded="Window_Loaded">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <Grid>
+        <TextBlock Text="{Binding Text}" FontSize="16" Margin="10" TextWrapping="Wrap" />
+        <DropDownButton Content="Select Plugin">
+            <DropDownButton.Flyout>
+                <MenuFlyout Placement="BottomEdgeAlignedLeft"
+                            ItemsSource="{Binding PluginItems}">
+                </MenuFlyout>
+            </DropDownButton.Flyout>
+        </DropDownButton>
+
+    </Grid>
+
+</Window>

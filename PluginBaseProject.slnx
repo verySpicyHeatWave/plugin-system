@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="Contract/Contract.csproj" />
+  <Project Path="PluginA/PluginA.csproj" />
+  <Project Path="PluginB/PluginB.csproj" />
+  <Project Path="PluginBaseProject/PluginBaseProject.csproj" />
+  <Project Path="SigningTool/SigningTool.csproj" />
+  <Project Path="SubPlugin/SubPlugin.csproj" Id="2541fed0-688e-4488-bf95-b7108ea8849b" />
+</Solution>
